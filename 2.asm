@@ -4,10 +4,18 @@ codesg segment
 
 fishcc: mov ax, 2000H
         mov ds, ax
-		mov al,[0]
-        mov bl,[1]
-        mov cl,[2]
-        mov dl,[3]
+		mov bx, 1000H
+		mov ax, [bx]
+		inc bx
+		inc bx
+		mov [bx], ax
+		inc bx
+		inc bx
+		mov [bx], ax
+		inc bx
+		mov [bx], al
+		inc bx
+		mov [bx], al
 
         mov ax, 4C00H
         int 21H
